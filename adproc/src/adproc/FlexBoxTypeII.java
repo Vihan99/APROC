@@ -7,20 +7,20 @@ package adproc;
 
 /**
  *
- * @author up850844
+ * @author jayra
  */
-public class FlexBoxTypeI extends FlexBox{
+public class FlexBoxTypeII extends FlexBox {
     private int quantity;
     
-    public FlexBoxTypeI(int[] dimension, int cardGrade, int colourPrint, 
+    public FlexBoxTypeII(int[] dimension, int cardGrade, int colourPrint, 
                         boolean reinforcedBottom, boolean reinforcedCorners, 
                         boolean sealableTop){
         super(dimension, cardGrade, colourPrint, reinforcedBottom,
               reinforcedCorners, sealableTop);
         
         if (
-            (cardGrade <= 3 && cardGrade >= 1) &&
-            (colourPrint == 0) &&
+            (cardGrade <= 4 && cardGrade >= 2) &&
+            (colourPrint == 1) &&
             (reinforcedBottom == false) &&
             (reinforcedCorners == false)
            ){

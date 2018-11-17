@@ -14,6 +14,7 @@ import java.util.Arrays;
 public class FlexBoxTesting {
     public static void main(String arg[]){
         int[] dim = {55,55,55};
+        
         FlexBoxTypeI fbi = new FlexBoxTypeI(dim, 2, 3, true, true, true);
         
         fbi.setQuantity(5);
@@ -25,6 +26,7 @@ public class FlexBoxTesting {
         System.out.println("Reinforced Corners: " + fbi.getReinforcedCorners());
         System.out.println("Sealable Top: " + fbi.getSealableTop());
         System.out.println("Quantity: " + fbi.getQuantity());
+        System.out.println("Surface Area: " + fbi.calcSurfaceArea());
         
         int[] newDim = {66,66,66};
         fbi.setDimension(newDim);
@@ -43,5 +45,6 @@ public class FlexBoxTesting {
         System.out.println("Reinforced Corners: " + fbi.getReinforcedCorners());
         System.out.println("Sealable Top: " + fbi.getSealableTop());
         System.out.println("Quantity: " + fbi.getQuantity());
+        System.out.println("Surface Area: " + fbi.calcSurfaceArea());
     }
 }

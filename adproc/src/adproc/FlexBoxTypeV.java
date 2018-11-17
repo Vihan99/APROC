@@ -7,22 +7,22 @@ package adproc;
 
 /**
  *
- * @author up850844
+ * @author jayra
  */
-public class FlexBoxTypeI extends FlexBox{
+public class FlexBoxTypeV extends FlexBox {
     private int quantity;
     
-    public FlexBoxTypeI(int[] dimension, int cardGrade, int colourPrint, 
+    public FlexBoxTypeV(int[] dimension, int cardGrade, int colourPrint, 
                         boolean reinforcedBottom, boolean reinforcedCorners, 
                         boolean sealableTop){
         super(dimension, cardGrade, colourPrint, reinforcedBottom,
               reinforcedCorners, sealableTop);
         
         if (
-            (cardGrade <= 3 && cardGrade >= 1) &&
-            (colourPrint == 0) &&
-            (reinforcedBottom == false) &&
-            (reinforcedCorners == false)
+            (cardGrade <= 5 && cardGrade >= 3) &&
+            (colourPrint == 2) &&
+            (reinforcedBottom == true) &&
+            (reinforcedCorners == true)
            ){
             System.out.println("OK!");
         }

@@ -72,4 +72,10 @@ public class FlexBox {
     }
     // end of accessor/mutator methods
     
+    public double calcSurfaceArea(){
+        double sa;
+        sa = 2 * dim[0] + 2 * dim[1] + 2 * dim[2];
+        return sa;
+    }
+    
 }
