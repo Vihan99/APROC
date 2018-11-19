@@ -15,7 +15,7 @@ public class FlexBoxTesting {
     public static void main(String arg[]){
         int[] dim = {55,55,55};
         
-        FlexBoxTypeI fbi = new FlexBoxTypeI(dim, 2, 3, true, true, true);
+        FlexBoxTypeI fbi = new FlexBoxTypeI(dim, 2, 3, true, true, true, 10);
         
         fbi.setQuantity(5);
         System.out.println("My First FlexBox:");
