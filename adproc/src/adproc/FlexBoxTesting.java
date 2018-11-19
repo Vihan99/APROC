@@ -5,46 +5,70 @@
  */
 package adproc;
 
-import java.util.Arrays;
-
 /**
  *
  * @author jayra
  */
 public class FlexBoxTesting {
     public static void main(String arg[]){
-        int[] dim = {55,55,55};
         
-        FlexBoxTypeI fbi = new FlexBoxTypeI(dim, 2, 3, true, true, true, 10);
+//process to selectively create boxes of a specific type
         
-        fbi.setQuantity(5);
-        System.out.println("My First FlexBox:");
-        System.out.println("Dimension: " + Arrays.toString(fbi.getDimension()));
-        System.out.println("Card Grade: " + fbi.getCardGrade());
-        System.out.println("Colour Print: " + fbi.getColour());
-        System.out.println("Reinforced Bottom: " + fbi.getReinforcedBottom());
-        System.out.println("Reinforced Corners: " + fbi.getReinforcedCorners());
-        System.out.println("Sealable Top: " + fbi.getSealableTop());
-        System.out.println("Quantity: " + fbi.getQuantity());
-        System.out.println("Surface Area: " + fbi.calcSurfaceArea());
+        //eg input variable:
+        int[] dim = {1, 2, 3};
+        boolean stop = true;
+        int qty = 10;
+        //only these determine box type
+        int grade = 2;
+        int colours = 2;
+        boolean rbot = true;
+        boolean rcorn = false;
         
-        int[] newDim = {66,66,66};
-        fbi.setDimension(newDim);
-        fbi.setCardGrade(5);
-        fbi.setColour(0);
-        fbi.setReinforcedBottom(false);
-        fbi.setReinforcedCorners(false);
-        fbi.setSealableTop(false);
-        fbi.setQuantity(10);
         
-        System.out.println("\nMy FlexBox Updated:");
-        System.out.println("Dimension: " + Arrays.toString(fbi.getDimension()));
-        System.out.println("Card Grade: " + fbi.getCardGrade());
-        System.out.println("Colour Print: " + fbi.getColour());
-        System.out.println("Reinforced Bottom: " + fbi.getReinforcedBottom());
-        System.out.println("Reinforced Corners: " + fbi.getReinforcedCorners());
-        System.out.println("Sealable Top: " + fbi.getSealableTop());
-        System.out.println("Quantity: " + fbi.getQuantity());
-        System.out.println("Surface Area: " + fbi.calcSurfaceArea());
+        if(
+          (grade >= 1 && grade <= 3) && //conditions for a type i box
+          (colours == 0) &&
+          (rbot == false) &&
+          (rcorn == false)
+          ){
+            FlexBoxTypeI box = new FlexBoxTypeI(dim,grade,colours,rbot,rcorn,stop,qty);
+            System.out.println("Type I created");
+        }else if(
+                (grade >= 2 && grade <= 4) && //conditions for a type ii box
+                (colours == 1) &&
+                (rbot == false) &&
+                (rcorn == false)
+                ){
+            FlexBoxTypeII box = new FlexBoxTypeII(dim,grade,colours,rbot,rcorn,stop,qty);
+            System.out.println("Type II created");
+        }else if(
+                (grade >= 2 && grade <= 5) && //conditions for a type iii box
+                (colours == 2) &&
+                (rbot == false) &&
+                (rcorn == false)
+                ){
+            FlexBoxTypeIII box = new FlexBoxTypeIII(dim,grade,colours,rbot,rcorn,stop,qty);
+            System.out.println("Type III created");
+        }else if(
+                (grade >= 2 && grade <= 5) && //conditions for a type iv box
+                (colours == 2) &&
+                (rbot == true) &&
+                (rcorn == false)
+                ){
+            FlexBoxTypeIV box = new FlexBoxTypeIV(dim,grade,colours,rbot,rcorn,stop,qty);
+            System.out.println("Type IV created");
+            double price = box.calcPrice();
+            System.out.println("costs: " + price);
+        }else if(
+                (grade >= 2 && grade <= 5) && //conditions for a type v box
+                (colours == 2) &&
+                (rbot == true) &&
+                (rcorn == true)
+                ){
+            FlexBoxTypeV box = new FlexBoxTypeV(dim,grade,colours,rbot,rcorn,stop,qty);
+            System.out.println("Type V created");
+        }else{
+            System.out.println("Box not possible");
+        }
     }
 }

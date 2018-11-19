@@ -37,6 +37,7 @@ public class FlexBox {
      * @param reinforcedBottom Declares whether box has a reinforced bottom
      * @param reinforcedCorners Declares whether box has reinforced corners
      * @param sealableTop Declares whether box has a sealable top
+     * @param quantity Quantity of boxes of this instance
      */
     public FlexBox(int[] dimension, int cardGrade, int colourPrint, 
                    boolean reinforcedBottom, boolean reinforcedCorners, 
@@ -158,7 +159,9 @@ public class FlexBox {
      */
     public double calcSurfaceArea(){
         double sa;
-        sa = 2 * dim[0] + 2 * dim[1] + 2 * dim[2];
+        sa = (2 * dim[0] * dim[2]) + 
+             (2 * dim[1] * dim[0]) +
+             (2 * dim[2] * dim[1]);
         return sa;
     }
     /**
