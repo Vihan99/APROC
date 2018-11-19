@@ -21,7 +21,7 @@ public class FlexBoxTypeIV extends FlexBox {
      * @param sealableTop Declares whether box has a sealable top
      * @param quantity Quantity of boxes of this instance
      */
-    public FlexBoxTypeIV(int[] dimension, int cardGrade, int colourPrint, 
+    public FlexBoxTypeIV(double[] dimension, int cardGrade, int colourPrint, 
                         boolean reinforcedBottom, boolean reinforcedCorners, 
                         boolean sealableTop, int quantity){
         super(dimension, cardGrade, colourPrint, reinforcedBottom,

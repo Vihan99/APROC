@@ -21,7 +21,7 @@ public class FlexBoxTypeV extends FlexBox {
      * @param sealableTop Declares whether box has a sealable top
      * @param quantity Quantity of boxes of this instance
      */
-    public FlexBoxTypeV(int[] dimension, int cardGrade, int colourPrint, 
+    public FlexBoxTypeV(double[] dimension, int cardGrade, int colourPrint, 
                         boolean reinforcedBottom, boolean reinforcedCorners, 
                         boolean sealableTop, int quantity){
         super(dimension, cardGrade, colourPrint, reinforcedBottom,

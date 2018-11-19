@@ -13,7 +13,7 @@ package adproc;
  * 
  */
 public class FlexBox {
-    protected int[] dim;
+    protected double[] dim;
     protected int cGrade;
     protected int colPrint;
     protected boolean rBot;
@@ -39,7 +39,7 @@ public class FlexBox {
      * @param sealableTop Declares whether box has a sealable top
      * @param quantity Quantity of boxes of this instance
      */
-    public FlexBox(int[] dimension, int cardGrade, int colourPrint, 
+    public FlexBox(double[] dimension, int cardGrade, int colourPrint, 
                    boolean reinforcedBottom, boolean reinforcedCorners, 
                    boolean sealableTop, int quantity){
         dim = dimension;
@@ -56,7 +56,7 @@ public class FlexBox {
      * Method to return array of box dimensions
      * @return box dimension array
      */
-    public int[] getDimension(){
+    public double[] getDimension(){
         return dim;
     }
     /**
@@ -106,7 +106,7 @@ public class FlexBox {
      * Mutator method to set dimension array
      * @param newDim the array for dimension
      */
-    public void setDimension(int[] newDim){
+    public void setDimension(double[] newDim){
         dim = newDim;
     }
     /**

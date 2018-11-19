@@ -7,7 +7,7 @@ package adproc;
 
 /**
  *
- * @author jayra
+ * @author up850844
  */
 public class FlexBoxTesting {
     public static void main(String arg[]){
@@ -15,7 +15,7 @@ public class FlexBoxTesting {
 //process to selectively create boxes of a specific type
         
         //eg input variable:
-        int[] dim = {1, 2, 3};
+        double[] dim = {1, 2, 3};
         boolean stop = true;
         int qty = 10;
         //only these determine box type
