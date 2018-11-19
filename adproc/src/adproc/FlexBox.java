@@ -12,12 +12,13 @@ package adproc;
  * @author  up850844
  */
 public class FlexBox {
-    private int[] dim;
-    private int cGrade;
-    private int colPrint;
-    private boolean rBot;
-    private boolean rCorn;
-    private boolean sTop;
+    protected int[] dim;
+    protected int cGrade;
+    protected int colPrint;
+    protected boolean rBot;
+    protected boolean rCorn;
+    protected boolean sTop;
+    protected static double[] gradePriceMultiplier = {0.55, 0.65, 0.82, 0.98, 1.5};
     
     public FlexBox(){}
     
@@ -76,6 +77,13 @@ public class FlexBox {
         double sa;
         sa = 2 * dim[0] + 2 * dim[1] + 2 * dim[2];
         return sa;
+    }
+    
+    public double calcBasePrice(){
+        double bp;
+        double area = calcSurfaceArea();
+        bp = area * gradePriceMultiplier[cGrade-1];
+        return bp;
     }
     
 }

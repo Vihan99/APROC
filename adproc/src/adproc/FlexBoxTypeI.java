@@ -17,18 +17,6 @@ public class FlexBoxTypeI extends FlexBox{
                         boolean sealableTop){
         super(dimension, cardGrade, colourPrint, reinforcedBottom,
               reinforcedCorners, sealableTop);
-        
-        if (
-            (cardGrade <= 3 && cardGrade >= 1) &&
-            (colourPrint == 0) &&
-            (reinforcedBottom == false) &&
-            (reinforcedCorners == false)
-           ){
-            System.out.println("OK!");
-        }
-        else{
-            System.out.println("NOT OK!");
-        }
     }
     
     public int getQuantity(){
@@ -36,5 +24,14 @@ public class FlexBoxTypeI extends FlexBox{
     }
     public void setQuantity(int newQuantity){
         quantity = newQuantity;
+    }
+    
+    public double calcPrice(){
+        double p = calcBasePrice();
+        if(sTop == true){
+            return p *= 1.1;
+        }else{
+            return p;
+        }
     }
 }
