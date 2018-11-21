@@ -29,8 +29,7 @@ public class FlexBox {
     public FlexBox(){}
     
     /**
-     * Constructor for FlexBox using all the necessary variables to effectively
-     * describe the FlexBox
+     * Constructor for FlexBox using all variables
      * @param dimension Array for the x,y,z dimensions of the box
      * @param cardGrade Value of the card grade (1-5)
      * @param colourPrint Value of the number of colours used in printing (0-2)
@@ -168,7 +167,7 @@ public class FlexBox {
      * Method to calculate the base price (card determined) of the box
      * @return base price value of the box
      */
-    public double calcBasePrice(){
+    protected double calcBasePrice(){
         double bp;
         double area = calcSurfaceArea();
         bp = area * gradePriceMultiplier[cGrade-1];
