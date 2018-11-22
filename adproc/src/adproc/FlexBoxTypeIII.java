@@ -33,8 +33,11 @@ public class FlexBoxTypeIII extends FlexBox {
      * Method to calculate the order price for the box(es) of this instance 
      * @return order price for the box(es) of this instance
      */
+    @Override
     public double calcPrice(){
-        double p = calcBasePrice();
+        double area = calcSurfaceArea();
+        double p = area * gradePriceMultiplier[cGrade-1];
+        
         p *= 1.15;
         if(sTop == true){
             return p * 1.1 * qty;

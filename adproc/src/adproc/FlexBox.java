@@ -12,7 +12,7 @@ package adproc;
  * @author  up850844
  * 
  */
-public class FlexBox {
+public abstract class FlexBox {
     protected double[] dim;
     protected int cGrade;
     protected int colPrint;
@@ -167,11 +167,5 @@ public class FlexBox {
      * Method to calculate the base price (card determined) of the box
      * @return base price value of the box
      */
-    protected double calcBasePrice(){
-        double bp;
-        double area = calcSurfaceArea();
-        bp = area * gradePriceMultiplier[cGrade-1];
-        return bp;
-    }
-    
+    abstract double calcPrice();
 }
