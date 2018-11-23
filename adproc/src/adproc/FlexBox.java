@@ -171,6 +171,7 @@ public abstract class FlexBox {
      */
     abstract double calcPrice();
     
+    
     public String orderStatement(){
         String orderSt = "Box Dimension: " + Arrays.toString(dim) ;
         return orderSt;

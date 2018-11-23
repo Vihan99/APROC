@@ -5,48 +5,11 @@
  */
 package adproc;
 
-import java.util.Arrays;
-
 /**
  *
  * @author up850844
  */
-public class FlexBoxTesting {
-    public static void main(String arg[]){
-        double[] arr = {0.4,0.5,0.2};
-        int grade = 1;
-        int colours = 0;
-        boolean rBot = false;
-        boolean rCorn = false;
-        boolean sTop = true;
-        int qty = 1;
-        
-        FlexBox goodBoxOrder = createFlexBoxOrder(arr, grade, colours, rBot, rCorn, sTop, qty);
-        System.out.println("This is a " + goodBoxOrder.getClass().getSimpleName() + " order!");
-        System.out.println("The Box has dimensions of: " + Arrays.toString(goodBoxOrder.getDimension()));
-        System.out.println("The Box has " + goodBoxOrder.getColour() + " colours");
-        System.out.println("The Box has a reinforced bottom value of: " + goodBoxOrder.getReinforcedBottom());
-        System.out.println("The Box has a reinforced corners vale of : " + goodBoxOrder.getReinforcedCorners());
-        System.out.println("The Box has a sealable top value of: " + goodBoxOrder.getSealableTop());
-        System.out.println(goodBoxOrder.getQuantity() + " of these Boxes have been ordered.");
-        System.out.println("The sub-total order price for this Box style is: " + goodBoxOrder.calcPrice()); 
-        
-    }
-    
-    
-    
-    /**
-     * Method that takes all of the data fields for a box and creates and returns
-     * the desired box
-     * @param arr box dimension array
-     * @param grade box grade value
-     * @param colours number of box colours
-     * @param rBot reinforced bottom value
-     * @param rCorn reinforced corners value
-     * @param sTop sealable top value
-     * @param qty quantity of boxes of this type ordered.
-     * @return created FlexBox of a specific type
-     */
+public class BoxOrdering {
     public static FlexBox createFlexBoxOrder(double[] arr, int grade, int colours, boolean rBot, boolean rCorn, boolean sTop, int qty){
         
         if(
@@ -90,4 +53,9 @@ public class FlexBoxTesting {
         }
         
     }
+
+    FlexBox createFlexBoxOrder() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
+

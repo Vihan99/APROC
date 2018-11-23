@@ -17,6 +17,7 @@ public class Adproc {
     public static void main(String[] args) {
         FlexBoxUI ui = new FlexBoxUI();
         ui.setVisible(true);
+    
     }
     
 }
