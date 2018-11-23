@@ -1,5 +1,7 @@
 package adproc;
 
+import java.util.Arrays;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -164,8 +166,15 @@ public abstract class FlexBox {
         return sa;
     }
     /**
-     * Method to calculate the base price (card determined) of the box
+     * Abstract method to calculate the base price (card determined) of the box
      * @return base price value of the box
      */
     abstract double calcPrice();
+    
+    public String orderStatement(){
+        String orderSt = "Box Dimension: " + Arrays.toString(dim) ;
+        return orderSt;
+    }
 }
+
+
