@@ -173,8 +173,16 @@ public abstract class FlexBox {
     
     
     public String orderStatement(){
-        String orderSt = "Box Dimension: " + Arrays.toString(dim) ;
-        return orderSt;
+        String orderSta = "Box Dimension: " + Arrays.toString(dim);
+        orderSta += "\nCard Grade: " + cGrade;
+        orderSta += "\nColours Printed: " + colPrint;
+        orderSta += "\nReinforced Bottoms?: " + rBot;
+        orderSta += "\nReinforced Corners?: " + rCorn;
+        orderSta += "\nSealable Top?: " + sTop;
+        orderSta += "\nQuantity of this box style ordered: " + qty;
+        orderSta += "\nOrder sub-total: " + calcPrice() + "\n\n";
+        
+        return orderSta;
     }
 }
 

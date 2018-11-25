@@ -65,10 +65,10 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lenLabel" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="heiLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="widLabel" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -88,18 +88,19 @@
                               <Component id="grade4" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="grade3" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="grade2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="gradeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="sTopCheck" min="-2" max="-2" attributes="0"/>
+                              <Component id="rCornCheck" min="-2" max="-2" attributes="0"/>
+                              <Component id="addFeaLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="rBotCheck" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="quantity" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="qtyLabel" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                              <Component id="numColLabel" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="coloursDrop" min="-2" max="-2" attributes="0"/>
@@ -110,15 +111,14 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addBoxBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="57" max="32767" attributes="0"/>
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="grade5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="grade1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="grade5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="grade1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -135,9 +135,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="clearBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="exitBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -166,53 +166,54 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numColLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addFeaLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rCornCheck" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rBotCheck" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lenLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="length" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="widLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="width" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sTopCheck" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="heiLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="height" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="coloursDrop" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="coloursDrop" min="-2" max="-2" attributes="0"/>
+                              <Component id="gradeLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="grade1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="grade2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <Component id="qtyLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="quantity" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="grade3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -220,13 +221,13 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="grade5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="addBoxBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="clearBtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="exitBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -234,17 +235,17 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lenLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Length"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="widLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Width"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="heiLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Height"/>
           </Properties>
@@ -258,27 +259,27 @@
         </Component>
         <Component class="javax.swing.JTextField" name="height">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="addFeaLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Addittional Features:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+        <Component class="javax.swing.JCheckBox" name="rCornCheck">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reinforced Corners"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+        <Component class="javax.swing.JCheckBox" name="rBotCheck">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reinforced Botttom"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+        <Component class="javax.swing.JCheckBox" name="sTopCheck">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sealable Top"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sTopCheckActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="grade2">
@@ -289,7 +290,7 @@
             <Property name="text" type="java.lang.String" value="Grade 2"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="gradeLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cardboard Grade:"/>
           </Properties>
@@ -333,7 +334,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="outputTextArea">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -343,23 +344,23 @@
         </Container>
         <Component class="javax.swing.JTextField" name="jTextField4">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="addBoxBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add Box"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBoxBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="exitBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Exit"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="clearBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Clear"/>
           </Properties>
@@ -374,14 +375,14 @@
             <Property name="text" type="java.lang.String" value="Please state the order number(s) you would like to proceed with"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="quantity">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="qtyLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Quantity:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="numColLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Number of Colours:"/>
           </Properties>

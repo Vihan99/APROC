@@ -10,6 +10,7 @@ package adproc;
  * @author up879045
  */
 public class FlexBoxUI extends javax.swing.JFrame {
+    String globalInvoice;
 
     /**
      * Creates new form FlexBoxUI
@@ -29,44 +30,44 @@ public class FlexBoxUI extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lenLabel = new javax.swing.JLabel();
+        widLabel = new javax.swing.JLabel();
+        heiLabel = new javax.swing.JLabel();
         length = new javax.swing.JTextField();
         width = new javax.swing.JTextField();
         height = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        addFeaLabel = new javax.swing.JLabel();
+        rCornCheck = new javax.swing.JCheckBox();
+        rBotCheck = new javax.swing.JCheckBox();
+        sTopCheck = new javax.swing.JCheckBox();
         grade2 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
+        gradeLabel = new javax.swing.JLabel();
         grade1 = new javax.swing.JRadioButton();
         grade3 = new javax.swing.JRadioButton();
         grade4 = new javax.swing.JRadioButton();
         grade5 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        outputTextArea = new javax.swing.JTextArea();
         jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        addBoxBtn = new javax.swing.JButton();
+        exitBtn = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        quantity = new javax.swing.JTextField();
+        qtyLabel = new javax.swing.JLabel();
+        numColLabel = new javax.swing.JLabel();
         coloursDrop = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Flex Box Odering System"));
 
-        jLabel1.setText("Length");
+        lenLabel.setText("Length");
 
-        jLabel2.setText("Width");
+        widLabel.setText("Width");
 
-        jLabel3.setText("Height");
+        heiLabel.setText("Height");
 
         length.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,23 +75,23 @@ public class FlexBoxUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Addittional Features:");
+        addFeaLabel.setText("Addittional Features:");
 
-        jCheckBox1.setText("Reinforced Corners");
+        rCornCheck.setText("Reinforced Corners");
 
-        jCheckBox2.setText("Reinforced Botttom");
+        rBotCheck.setText("Reinforced Botttom");
 
-        jCheckBox3.setText("Sealable Top");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        sTopCheck.setText("Sealable Top");
+        sTopCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                sTopCheckActionPerformed(evt);
             }
         });
 
         buttonGroup1.add(grade2);
         grade2.setText("Grade 2");
 
-        jLabel5.setText("Cardboard Grade:");
+        gradeLabel.setText("Cardboard Grade:");
 
         buttonGroup1.add(grade1);
         grade1.setText("Grade 1");
@@ -104,33 +105,33 @@ public class FlexBoxUI extends javax.swing.JFrame {
         buttonGroup1.add(grade5);
         grade5.setText("Grade 5");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        outputTextArea.setColumns(20);
+        outputTextArea.setRows(5);
+        jScrollPane1.setViewportView(outputTextArea);
 
-        jButton1.setText("Add Box");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addBoxBtn.setText("Add Box");
+        addBoxBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addBoxBtnActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Exit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        exitBtn.setText("Exit");
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                exitBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Clear");
+        clearBtn.setText("Clear");
 
         jLabel6.setText("Dimensions (m):");
 
         jLabel7.setText("Please state the order number(s) you would like to proceed with");
 
-        jLabel8.setText("Quantity:");
+        qtyLabel.setText("Quantity:");
 
-        jLabel9.setText("Number of Colours:");
+        numColLabel.setText("Number of Colours:");
 
         coloursDrop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2" }));
 
@@ -146,10 +147,10 @@ public class FlexBoxUI extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
+                                    .addComponent(lenLabel)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel2)))
+                                        .addComponent(heiLabel)
+                                        .addComponent(widLabel)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
@@ -161,17 +162,18 @@ public class FlexBoxUI extends javax.swing.JFrame {
                                         .addComponent(height, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(grade4)
                             .addComponent(grade3)
-                            .addComponent(grade2))
+                            .addComponent(grade2)
+                            .addComponent(gradeLabel))
                         .addGap(44, 44, 44)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jLabel4)
-                            .addComponent(jCheckBox2)
+                            .addComponent(sTopCheck)
+                            .addComponent(rCornCheck)
+                            .addComponent(addFeaLabel)
+                            .addComponent(rBotCheck)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel9)
+                                .addComponent(quantity, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(qtyLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(numColLabel)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(46, 46, 46)
                                 .addComponent(coloursDrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -179,14 +181,13 @@ public class FlexBoxUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(addBoxBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                                 .addComponent(jLabel7))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(grade5)
-                                    .addComponent(grade1)
-                                    .addComponent(jLabel5))
+                                    .addComponent(grade1))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,9 +197,9 @@ public class FlexBoxUI extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(clearBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(exitBtn)
                         .addGap(21, 21, 21))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6)
@@ -220,54 +221,54 @@ public class FlexBoxUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(145, 145, 145)
-                                .addComponent(jLabel9))
+                                .addComponent(numColLabel))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(3, 3, 3)
-                                        .addComponent(jLabel4)
+                                        .addComponent(addFeaLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox1)
+                                        .addComponent(rCornCheck)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox2))
+                                        .addComponent(rBotCheck))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(26, 26, 26)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel1)
+                                            .addComponent(lenLabel)
                                             .addComponent(length, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(7, 7, 7)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel2)
+                                            .addComponent(widLabel)
                                             .addComponent(width, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jCheckBox3)
-                                    .addComponent(jLabel3)
-                                    .addComponent(height, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel5)))
+                                    .addComponent(sTopCheck)
+                                    .addComponent(heiLabel)
+                                    .addComponent(height, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(coloursDrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(coloursDrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gradeLabel))
+                        .addGap(27, 27, 27)
                         .addComponent(grade1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(grade2)
-                            .addComponent(jLabel8))
+                            .addComponent(qtyLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(grade3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(grade4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(grade5)
                         .addGap(102, 102, 102)
-                        .addComponent(jButton1)))
+                        .addComponent(addBoxBtn)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(clearBtn)
+                    .addComponent(exitBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -291,22 +292,21 @@ public class FlexBoxUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void sTopCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sTopCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_sTopCheckActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_exitBtnActionPerformed
 
     @SuppressWarnings("empty-statement")
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        BoxOrdering bo = new BoxOrdering();
-        int len = Integer.valueOf(length.getText());
-        int wid = Integer.valueOf(width.getText());
-        int hei = Integer.valueOf(height.getText());
-        int [] dim = {len, wid, hei};
+    private void addBoxBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBoxBtnActionPerformed
+        double len = Double.valueOf(length.getText());
+        double wid = Double.valueOf(width.getText());
+        double hei = Double.valueOf(height.getText());
+        double [] dim = {len, wid, hei};
         
         int grade;
         if(grade1.isSelected()){
@@ -320,13 +320,22 @@ public class FlexBoxUI extends javax.swing.JFrame {
         }else if (grade5.isSelected()){
             grade = 5;
         }else{
-            System.out.println("invalid");
+            grade = 1;
+            System.out.println("card grade not selected, default to 1");
         }
         
-        int colours = Integer.valueOf(coloursDrop.getSelectedItem().toString());
-        //FlexBox newFB = bo.createFlexBoxOrder(dim, grade, colours);
+        int colours = Integer.valueOf(coloursDrop.getSelectedItem().toString()); //validate me
+        boolean rBot = rBotCheck.isSelected();
+        boolean rCorn = rCornCheck.isSelected();
+        boolean sTop = sTopCheck.isSelected();
+        int qty = Integer.valueOf(quantity.getText());
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        FlexBox newFB = BoxOrdering.createFlexBoxOrder(dim, grade, colours, rBot, rCorn, sTop, qty);
+        String orderMess = newFB.orderStatement();
+        globalInvoice += orderMess;
+        outputTextArea.setText(globalInvoice);
+        
+    }//GEN-LAST:event_addBoxBtnActionPerformed
 
     private void lengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lengthActionPerformed
         // TODO add your handling code here:
@@ -368,35 +377,35 @@ public class FlexBoxUI extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBoxBtn;
+    private javax.swing.JLabel addFeaLabel;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton clearBtn;
     private javax.swing.JComboBox<String> coloursDrop;
+    private javax.swing.JButton exitBtn;
     private javax.swing.JRadioButton grade1;
     private javax.swing.JRadioButton grade2;
     private javax.swing.JRadioButton grade3;
     private javax.swing.JRadioButton grade4;
     private javax.swing.JRadioButton grade5;
+    private javax.swing.JLabel gradeLabel;
+    private javax.swing.JLabel heiLabel;
     private javax.swing.JTextField height;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel lenLabel;
     private javax.swing.JTextField length;
+    private javax.swing.JLabel numColLabel;
+    private javax.swing.JTextArea outputTextArea;
+    private javax.swing.JLabel qtyLabel;
+    private javax.swing.JTextField quantity;
+    private javax.swing.JCheckBox rBotCheck;
+    private javax.swing.JCheckBox rCornCheck;
+    private javax.swing.JCheckBox sTopCheck;
+    private javax.swing.JLabel widLabel;
     private javax.swing.JTextField width;
     // End of variables declaration//GEN-END:variables
 }
