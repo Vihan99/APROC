@@ -5,12 +5,15 @@
  */
 package adproc;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author up879045
  */
 public class FlexBoxUI extends javax.swing.JFrame {
     String globalInvoice = "";
+    ArrayList<FlexBox> boxList = new ArrayList<FlexBox>();
 
     /**
      * Creates new form FlexBoxUI
@@ -58,6 +61,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
         qtyLabel = new javax.swing.JLabel();
         numColLabel = new javax.swing.JLabel();
         coloursDrop = new javax.swing.JComboBox<>();
+        undoLastButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,6 +144,13 @@ public class FlexBoxUI extends javax.swing.JFrame {
 
         coloursDrop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2" }));
 
+        undoLastButton.setText("Undo Last Box");
+        undoLastButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                undoLastButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -187,8 +198,16 @@ public class FlexBoxUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(addBoxBtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                                .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 47, Short.MAX_VALUE)
+                                        .addComponent(jLabel7))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(undoLastButton)
+                                        .addGap(140, 140, 140)
+                                        .addComponent(clearOptionsButton)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(grade5)
@@ -202,8 +221,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(clearOptionsButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(exitBtn)
                         .addGap(21, 21, 21))))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -269,11 +287,12 @@ public class FlexBoxUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(grade5)
                         .addGap(102, 102, 102)
-                        .addComponent(addBoxBtn)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addBoxBtn)
+                            .addComponent(clearOptionsButton)
+                            .addComponent(undoLastButton))))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(clearOptionsButton)
-                    .addComponent(exitBtn))
+                .addComponent(exitBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -338,6 +357,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
         FlexBox newFB = BoxOrdering.createFlexBoxOrder(dim, grade, colours, rBot, rCorn, sTop, qty);
         String orderMess = newFB.orderStatement();
         globalInvoice += orderMess;
+        boxList.add(newFB);
         outputTextArea.setText(globalInvoice);
         
     }//GEN-LAST:event_addBoxBtnActionPerformed
@@ -357,6 +377,16 @@ public class FlexBoxUI extends javax.swing.JFrame {
         sTopCheck.setSelected(false);
         quantity.setText("");
     }//GEN-LAST:event_clearOptionsButtonActionPerformed
+
+    private void undoLastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoLastButtonActionPerformed
+        outputTextArea.setText("");
+        boxList.remove(boxList.size() - 1);
+        globalInvoice = "";
+        for (int i = 0; i < boxList.size(); i++) {
+            globalInvoice += boxList.get(i).orderStatement();
+	}
+        outputTextArea.setText(globalInvoice);
+    }//GEN-LAST:event_undoLastButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -422,6 +452,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox rBotCheck;
     private javax.swing.JCheckBox rCornCheck;
     private javax.swing.JCheckBox sTopCheck;
+    private javax.swing.JButton undoLastButton;
     private javax.swing.JLabel widLabel;
     private javax.swing.JTextField width;
     // End of variables declaration//GEN-END:variables
