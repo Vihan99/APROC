@@ -28,7 +28,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        gradeButtonGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         lenLabel = new javax.swing.JLabel();
         widLabel = new javax.swing.JLabel();
@@ -51,7 +51,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         addBoxBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
-        clearBtn = new javax.swing.JButton();
+        clearOptionsButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         quantity = new javax.swing.JTextField();
@@ -88,21 +88,21 @@ public class FlexBoxUI extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(grade2);
+        gradeButtonGroup.add(grade2);
         grade2.setText("Grade 2");
 
         gradeLabel.setText("Cardboard Grade:");
 
-        buttonGroup1.add(grade1);
+        gradeButtonGroup.add(grade1);
         grade1.setText("Grade 1");
 
-        buttonGroup1.add(grade3);
+        gradeButtonGroup.add(grade3);
         grade3.setText("Grade 3");
 
-        buttonGroup1.add(grade4);
+        gradeButtonGroup.add(grade4);
         grade4.setText("Grade 4");
 
-        buttonGroup1.add(grade5);
+        gradeButtonGroup.add(grade5);
         grade5.setText("Grade 5");
 
         outputTextArea.setColumns(20);
@@ -123,7 +123,12 @@ public class FlexBoxUI extends javax.swing.JFrame {
             }
         });
 
-        clearBtn.setText("Clear");
+        clearOptionsButton.setText("Clear Options");
+        clearOptionsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearOptionsButtonActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Dimensions (m):");
 
@@ -197,7 +202,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(clearBtn)
+                        .addComponent(clearOptionsButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exitBtn)
                         .addGap(21, 21, 21))))
@@ -267,7 +272,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                         .addComponent(addBoxBtn)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(clearBtn)
+                    .addComponent(clearOptionsButton)
                     .addComponent(exitBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -324,7 +329,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
             System.out.println("card grade not selected, default to 1");
         }
         
-        int colours = Integer.valueOf(coloursDrop.getSelectedItem().toString()); //validate me
+        int colours = Integer.valueOf(coloursDrop.getSelectedItem().toString());
         boolean rBot = rBotCheck.isSelected();
         boolean rCorn = rCornCheck.isSelected();
         boolean sTop = sTopCheck.isSelected();
@@ -340,6 +345,18 @@ public class FlexBoxUI extends javax.swing.JFrame {
     private void lengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lengthActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lengthActionPerformed
+
+    private void clearOptionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOptionsButtonActionPerformed
+        length.setText("");
+        width.setText("");
+        height.setText("");
+        gradeButtonGroup.clearSelection();
+        coloursDrop.setSelectedIndex(0);
+        rBotCheck.setSelected(false);
+        rCornCheck.setSelected(false);
+        sTopCheck.setSelected(false);
+        quantity.setText("");
+    }//GEN-LAST:event_clearOptionsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,8 +396,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBoxBtn;
     private javax.swing.JLabel addFeaLabel;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton clearBtn;
+    private javax.swing.JButton clearOptionsButton;
     private javax.swing.JComboBox<String> coloursDrop;
     private javax.swing.JButton exitBtn;
     private javax.swing.JRadioButton grade1;
@@ -388,6 +404,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton grade3;
     private javax.swing.JRadioButton grade4;
     private javax.swing.JRadioButton grade5;
+    private javax.swing.ButtonGroup gradeButtonGroup;
     private javax.swing.JLabel gradeLabel;
     private javax.swing.JLabel heiLabel;
     private javax.swing.JTextField height;
