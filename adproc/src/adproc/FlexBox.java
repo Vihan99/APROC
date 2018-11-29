@@ -165,7 +165,10 @@ public abstract class FlexBox {
      */
     abstract double calcPrice();
     
-    
+    /**
+     * 
+     * @return statement about an flexbox order
+     */
     public String orderStatement(){
         String orderSta = "Box Dimension: " + Arrays.toString(dim);
         orderSta += "\nCard Grade: " + cGrade;
