@@ -180,7 +180,7 @@ public abstract class FlexBox {
         orderSta += "\nReinforced Corners?: " + rCorn;
         orderSta += "\nSealable Top?: " + sTop;
         orderSta += "\nQuantity of this box style ordered: " + qty;
-        orderSta += "\nOrder sub-total: " + calcPrice() + "\n\n";
+        orderSta += "\nOrder sub-total: £" + String.format("%.2f", calcPrice())  + "\n\n";
         
         return orderSta;
     }
