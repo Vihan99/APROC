@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package adproc;
 
 /**
@@ -38,7 +33,7 @@ public class FlexBoxTypeIII extends FlexBox {
         double area = calcSurfaceArea();
         double p = area * gradePriceMultiplier[cGrade-1];
         
-        p *= 1.15;
+        p *= (1 + 0.15);
         if(sTop == true){
             return p * 1.1 * qty;
         }else{

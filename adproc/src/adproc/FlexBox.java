@@ -2,12 +2,6 @@ package adproc;
 
 import java.util.Arrays;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * FlexBox superclass
  * @author up879045
@@ -180,7 +174,7 @@ public abstract class FlexBox {
         orderSta += "\nReinforced Corners?: " + rCorn;
         orderSta += "\nSealable Top?: " + sTop;
         orderSta += "\nQuantity of this box style ordered: " + qty;
-        orderSta += "\nOrder sub-total: £" + String.format("%.2f", calcPrice())  + "\n\n";
+        orderSta += "\nORDER SUB-TOTAL: £" + String.format("%.2f", calcPrice())  + "\n\n";
         
         return orderSta;
     }
