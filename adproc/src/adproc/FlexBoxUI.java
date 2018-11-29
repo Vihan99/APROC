@@ -12,8 +12,12 @@ import java.util.ArrayList;
  * @author up879045
  */
 public class FlexBoxUI extends javax.swing.JFrame {
-    String globalInvoice = "";
-    ArrayList<FlexBox> boxList = new ArrayList<FlexBox>();
+    private String globalInvoice = "";
+    private ArrayList<FlexBox> boxList = new ArrayList<FlexBox>();
+    private double curLen;
+    private double curWid;
+    private double curHei;
+    private int curQty;
 
     /**
      * Creates new form FlexBoxUI
@@ -91,11 +95,12 @@ public class FlexBoxUI extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         totalLabel = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        errorLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("FlexBox Ordering System"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -372,23 +377,32 @@ public class FlexBoxUI extends javax.swing.JFrame {
 
         jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        errorLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        errorLabel.setForeground(new java.awt.Color(255, 0, 0));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Error Message: ");
+        jLabel1.setText("Error Message:");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 189, Short.MAX_VALUE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 139, Short.MAX_VALUE))
+                    .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(0, 57, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -413,7 +427,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
@@ -424,7 +438,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 18, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(15, 15, 15)))
@@ -438,7 +452,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(exitBtn, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -487,42 +501,68 @@ public class FlexBoxUI extends javax.swing.JFrame {
         updateGlobalOrderString();
         updateTotalOrderPrice();
     }//GEN-LAST:event_undoLastButtonActionPerformed
-
+   
     @SuppressWarnings("empty-statement")
     private void addBoxBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBoxBtnActionPerformed
-        double len = Double.valueOf(length.getText());
-        double wid = Double.valueOf(width.getText());
-        double hei = Double.valueOf(height.getText());
-        double [] dim = {len, wid, hei};
+        try{
+            
+            try{
+                curLen = Double.valueOf(length.getText());
+                curWid = Double.valueOf(width.getText());
+                curHei = Double.valueOf(height.getText());
+            }catch(Exception e){
+                errorLabel.setText("Dimension values must be numerals");
+                throw new Exception();
+            }
+            
+            double[] dim ={curLen, curWid, curHei};
+            
+            int grade;
+            if(grade1.isSelected()){
+                grade = 1;
+            }else if (grade2.isSelected()){
+                grade = 2;
+            }else if (grade3.isSelected()){
+                grade = 3;
+            }else if (grade4.isSelected()){
+                grade = 4;
+            }else if (grade5.isSelected()){
+                grade = 5;
+            }else{
+                errorLabel.setText("Card Grade must be selected");
+                throw new Exception();
+            }
 
-        int grade;
-        if(grade1.isSelected()){
-            grade = 1;
-        }else if (grade2.isSelected()){
-            grade = 2;
-        }else if (grade3.isSelected()){
-            grade = 3;
-        }else if (grade4.isSelected()){
-            grade = 4;
-        }else if (grade5.isSelected()){
-            grade = 5;
-        }else{
-            grade = 1;
-            System.out.println("card grade not selected, default to 1");
+            int colours = Integer.valueOf(coloursDrop.getSelectedItem().toString());
+            boolean rBot = rBotCheck.isSelected();
+            boolean rCorn = rCornCheck.isSelected();
+            boolean sTop = sTopCheck.isSelected();
+            
+            
+            try{
+                curQty = Integer.valueOf(quantity.getText());
+            }catch(Exception e){
+                errorLabel.setText("Quanity value must be an integer");
+                throw new Exception();
+            }
+            curQty = Integer.valueOf(quantity.getText());
+            
+            
+            FlexBox newFB = BoxOrdering.createFlexBoxOrder(dim, grade, colours, rBot, rCorn, sTop, curQty);
+            if(newFB != null){
+                boxList.add(newFB);
+            }else{
+                errorLabel.setText("We cannot make this box");
+                throw new Exception();
+            }
+            
+            
+            errorLabel.setText("");
+            updateGlobalOrderString();
+            updateTotalOrderPrice();
+        }catch (Exception e){
+            
         }
-
-        int colours = Integer.valueOf(coloursDrop.getSelectedItem().toString());
-        boolean rBot = rBotCheck.isSelected();
-        boolean rCorn = rCornCheck.isSelected();
-        boolean sTop = sTopCheck.isSelected();
-        int qty = Integer.valueOf(quantity.getText());
-
-        FlexBox newFB = BoxOrdering.createFlexBoxOrder(dim, grade, colours, rBot, rCorn, sTop, qty);
-        String orderMess = newFB.orderStatement();
-        boxList.add(newFB);
-        
-        updateGlobalOrderString();
-        updateTotalOrderPrice();
     }//GEN-LAST:event_addBoxBtnActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
@@ -569,6 +609,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
     private javax.swing.JLabel addFeaLabel;
     private javax.swing.JButton clearOptionsButton;
     private javax.swing.JComboBox<String> coloursDrop;
+    private javax.swing.JLabel errorLabel;
     private javax.swing.JButton exitBtn;
     private javax.swing.JRadioButton grade1;
     private javax.swing.JRadioButton grade2;

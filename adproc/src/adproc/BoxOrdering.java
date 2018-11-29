@@ -49,13 +49,7 @@ public class BoxOrdering {
                 ){
                     return new FlexBoxTypeV(arr, grade, colours, rBot, rCorn, sTop, qty);
         }else{
-            System.out.println("box not possible!!!");
             return null;
         }
-        
-    }
-
-    FlexBox createFlexBoxOrder() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
