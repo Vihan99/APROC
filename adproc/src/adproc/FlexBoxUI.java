@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package adproc;
-
 import java.util.ArrayList;
-
 /**
- *
- * @author up879045
+ * FlexBoxUI class to manage the design and fuctionality of the GUI
  */
 public class FlexBoxUI extends javax.swing.JFrame {
     private String globalInvoice = "";
@@ -18,7 +10,6 @@ public class FlexBoxUI extends javax.swing.JFrame {
     private double curWid;
     private double curHei;
     private int curQty;
-
     /**
      * Creates new form FlexBoxUI
      */
@@ -27,7 +18,6 @@ public class FlexBoxUI extends javax.swing.JFrame {
         setTitle("FlexBox Ordering System");
         outputTextArea.setEditable(false);
     }
-
     /**
      *Method to update the total order price
      */
@@ -38,7 +28,6 @@ public class FlexBoxUI extends javax.swing.JFrame {
 	}
         totalLabel.setText("Total Order Price: £" + String.format("%.2f", newPrice));
     }
-    
     /**
      * Method to update the order string used as output for the customer
      */
@@ -61,14 +50,14 @@ public class FlexBoxUI extends javax.swing.JFrame {
     private void initComponents() {
 
         gradeButtonGroup = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
         exitBtn = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        addFeatPanel = new javax.swing.JPanel();
         addFeaLabel = new javax.swing.JLabel();
         rCornCheck = new javax.swing.JCheckBox();
         rBotCheck = new javax.swing.JCheckBox();
         sTopCheck = new javax.swing.JCheckBox();
-        jPanel3 = new javax.swing.JPanel();
+        dimPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         length = new javax.swing.JTextField();
         width = new javax.swing.JTextField();
@@ -76,35 +65,36 @@ public class FlexBoxUI extends javax.swing.JFrame {
         lenLabel = new javax.swing.JLabel();
         heiLabel = new javax.swing.JLabel();
         height = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
+        gradePanel = new javax.swing.JPanel();
         grade1 = new javax.swing.JRadioButton();
         grade2 = new javax.swing.JRadioButton();
         grade3 = new javax.swing.JRadioButton();
         grade4 = new javax.swing.JRadioButton();
         grade5 = new javax.swing.JRadioButton();
         gradeLabel = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        boxButtonPanel = new javax.swing.JPanel();
         addBoxBtn = new javax.swing.JButton();
         undoLastButton = new javax.swing.JButton();
         clearOptionsButton = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
+        coloursPanel = new javax.swing.JPanel();
         numColLabel = new javax.swing.JLabel();
         coloursDrop = new javax.swing.JComboBox<>();
-        jPanel7 = new javax.swing.JPanel();
+        qtyPanel = new javax.swing.JPanel();
         quantity = new javax.swing.JTextField();
         qtyLabel = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
+        totalPricePanel = new javax.swing.JPanel();
         totalLabel = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
+        errorPanel = new javax.swing.JPanel();
         errorLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
+        changeToSuitGrade = new javax.swing.JLabel();
+        outputPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        mainPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +103,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        addFeatPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         addFeaLabel.setText("Addittional Features:");
 
@@ -123,22 +113,22 @@ public class FlexBoxUI extends javax.swing.JFrame {
 
         sTopCheck.setText("Sealable Top");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout addFeatPanelLayout = new javax.swing.GroupLayout(addFeatPanel);
+        addFeatPanel.setLayout(addFeatPanelLayout);
+        addFeatPanelLayout.setHorizontalGroup(
+            addFeatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addFeatPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(addFeatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rCornCheck)
                     .addComponent(rBotCheck)
                     .addComponent(sTopCheck)
                     .addComponent(addFeaLabel))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        addFeatPanelLayout.setVerticalGroup(
+            addFeatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addFeatPanelLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(addFeaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -150,7 +140,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        dimPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel6.setText("Dimensions (m):");
 
@@ -160,47 +150,47 @@ public class FlexBoxUI extends javax.swing.JFrame {
 
         heiLabel.setText("Height");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout dimPanelLayout = new javax.swing.GroupLayout(dimPanel);
+        dimPanel.setLayout(dimPanelLayout);
+        dimPanelLayout.setHorizontalGroup(
+            dimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dimPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(dimPanelLayout.createSequentialGroup()
+                        .addGroup(dimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lenLabel)
                             .addComponent(heiLabel))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(dimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(length, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(width, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(height, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(widLabel))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        dimPanelLayout.setVerticalGroup(
+            dimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dimPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lenLabel)
                     .addComponent(length, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(widLabel)
                     .addComponent(width, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(heiLabel)
                     .addComponent(height, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        gradePanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         gradeButtonGroup.add(grade1);
         grade1.setText("Grade 1");
@@ -219,17 +209,17 @@ public class FlexBoxUI extends javax.swing.JFrame {
 
         gradeLabel.setText("Cardboard Grade:");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout gradePanelLayout = new javax.swing.GroupLayout(gradePanel);
+        gradePanel.setLayout(gradePanelLayout);
+        gradePanelLayout.setHorizontalGroup(
+            gradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gradePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(gradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gradeLabel)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(gradePanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(gradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(grade2)
                             .addComponent(grade1)
                             .addComponent(grade3)
@@ -237,9 +227,9 @@ public class FlexBoxUI extends javax.swing.JFrame {
                             .addComponent(grade5))))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        gradePanelLayout.setVerticalGroup(
+            gradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gradePanelLayout.createSequentialGroup()
                 .addComponent(gradeLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(grade1)
@@ -254,7 +244,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        boxButtonPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         addBoxBtn.setText("Add Box");
         addBoxBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -277,21 +267,21 @@ public class FlexBoxUI extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout boxButtonPanelLayout = new javax.swing.GroupLayout(boxButtonPanel);
+        boxButtonPanel.setLayout(boxButtonPanelLayout);
+        boxButtonPanelLayout.setHorizontalGroup(
+            boxButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(boxButtonPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(boxButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addBoxBtn)
                     .addComponent(undoLastButton)
                     .addComponent(clearOptionsButton))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        boxButtonPanelLayout.setVerticalGroup(
+            boxButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(boxButtonPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(addBoxBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -301,81 +291,81 @@ public class FlexBoxUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        coloursPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         numColLabel.setText("Number of Colours:");
 
         coloursDrop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2" }));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout coloursPanelLayout = new javax.swing.GroupLayout(coloursPanel);
+        coloursPanel.setLayout(coloursPanelLayout);
+        coloursPanelLayout.setHorizontalGroup(
+            coloursPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coloursPanelLayout.createSequentialGroup()
                 .addGap(4, 4, 4)
                 .addComponent(numColLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(coloursDrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        coloursPanelLayout.setVerticalGroup(
+            coloursPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coloursPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(coloursPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numColLabel)
                     .addComponent(coloursDrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        qtyPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         qtyLabel.setText("Quantity of Boxes in this style:");
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout qtyPanelLayout = new javax.swing.GroupLayout(qtyPanel);
+        qtyPanel.setLayout(qtyPanelLayout);
+        qtyPanelLayout.setHorizontalGroup(
+            qtyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(qtyPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(qtyLabel)
                 .addContainerGap())
-            .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(qtyPanelLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        qtyPanelLayout.setVerticalGroup(
+            qtyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(qtyPanelLayout.createSequentialGroup()
                 .addComponent(qtyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        totalPricePanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         totalLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         totalLabel.setText("Total Order Price: £0.00");
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        javax.swing.GroupLayout totalPricePanelLayout = new javax.swing.GroupLayout(totalPricePanel);
+        totalPricePanel.setLayout(totalPricePanelLayout);
+        totalPricePanelLayout.setHorizontalGroup(
+            totalPricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(totalPricePanelLayout.createSequentialGroup()
                 .addComponent(totalLabel)
-                .addGap(0, 50, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        totalPricePanelLayout.setVerticalGroup(
+            totalPricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(totalPricePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(totalLabel)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        errorPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         errorLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         errorLabel.setForeground(new java.awt.Color(255, 0, 0));
@@ -384,107 +374,116 @@ public class FlexBoxUI extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Error Message:");
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
+        changeToSuitGrade.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        changeToSuitGrade.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout errorPanelLayout = new javax.swing.GroupLayout(errorPanel);
+        errorPanel.setLayout(errorPanelLayout);
+        errorPanelLayout.setHorizontalGroup(
+            errorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(errorPanelLayout.createSequentialGroup()
+                .addGroup(errorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(errorPanelLayout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(0, 139, Short.MAX_VALUE))
-                    .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(changeToSuitGrade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
+        errorPanelLayout.setVerticalGroup(
+            errorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(errorPanelLayout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(changeToSuitGrade, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
         );
 
-        jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        outputPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         outputTextArea.setColumns(20);
         outputTextArea.setRows(5);
         jScrollPane1.setViewportView(outputTextArea);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        javax.swing.GroupLayout outputPanelLayout = new javax.swing.GroupLayout(outputPanel);
+        outputPanel.setLayout(outputPanelLayout);
+        outputPanelLayout.setHorizontalGroup(
+            outputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(outputPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        outputPanelLayout.setVerticalGroup(
+            outputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(outputPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(exitBtn)))
-                .addGap(38, 38, 38)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(errorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(exitBtn)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(gradePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(dimPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(boxButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(qtyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(coloursPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(addFeatPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(totalPricePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(44, 44, 44)
+                                .addComponent(outputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 16, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addComponent(dimPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addComponent(addFeatPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(15, 15, 15)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(gradePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addComponent(coloursPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(qtyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(exitBtn))
-                        .addGap(0, 11, Short.MAX_VALUE))))
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(boxButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(totalPricePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(outputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(errorPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(exitBtn)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -493,22 +492,25 @@ public class FlexBoxUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("Flex Box Ordering System");
+        mainPanel.getAccessibleContext().setAccessibleName("Flex Box Ordering System");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Method to clear the selected options within the GUI
+     * @param evt 
+     */
     private void clearOptionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOptionsButtonActionPerformed
         length.setText("");
         width.setText("");
@@ -520,7 +522,10 @@ public class FlexBoxUI extends javax.swing.JFrame {
         sTopCheck.setSelected(false);
         quantity.setText("");
     }//GEN-LAST:event_clearOptionsButtonActionPerformed
-
+    /**
+     * Method to undo the creation of the previously created FlexBox
+     * @param evt 
+     */
     private void undoLastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoLastButtonActionPerformed
         try{
             boxList.remove(boxList.size() - 1);
@@ -531,24 +536,33 @@ public class FlexBoxUI extends javax.swing.JFrame {
                 errorLabel.setText("All boxes have been undone");
             }
         }
-        
     }//GEN-LAST:event_undoLastButtonActionPerformed
-   
+    /**
+     * Method to add a FlexBox to the total order based on the selected options within the GUI
+     * @param evt 
+     */
     @SuppressWarnings("empty-statement")
     private void addBoxBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBoxBtnActionPerformed
-        try{
-            
-            try{
+        try{//handles valid creation of a flexbox
+            try{//handles validation of dimension values
                 curLen = Double.valueOf(length.getText());
                 curWid = Double.valueOf(width.getText());
                 curHei = Double.valueOf(height.getText());
-            }catch(NumberFormatException e){
-                errorLabel.setText("Dimension values must be numerals");
+                if(
+                  (curLen > 10 || curLen < 0.1) ||
+                  (curWid > 10 || curWid < 0.1) ||
+                  (curHei > 10 || curHei < 0.1)
+                  ){
+                    errorLabel.setText("Dimension must be between 0.1 - 10 metres");
+                    throw new Exception();
+                }
+            }catch(Exception e){
+                if(e instanceof NumberFormatException){
+                    errorLabel.setText("Dimension values must be numerals");
+                }
                 throw new Exception();
             }
-            
             double[] dim ={curLen, curWid, curHei};
-            
             int grade;
             if(grade1.isSelected()){
                 grade = 1;
@@ -564,42 +578,68 @@ public class FlexBoxUI extends javax.swing.JFrame {
                 errorLabel.setText("Card Grade must be selected");
                 throw new Exception();
             }
-
             int colours = Integer.valueOf(coloursDrop.getSelectedItem().toString());
             boolean rBot = rBotCheck.isSelected();
             boolean rCorn = rCornCheck.isSelected();
             boolean sTop = sTopCheck.isSelected();
-            
-            
-            try{
+            try{//handles validation of the quantity value
                 curQty = Integer.valueOf(quantity.getText());
-            }catch(NumberFormatException e){
-                errorLabel.setText("Quanity value must be an integer");
+                if(curQty < 1 || curQty > 100){
+                    errorLabel.setText("1 - 100 boxes per order only");
+                    throw new Exception();
+                }
+            }catch(Exception e){
+                if(e instanceof NumberFormatException){
+                    errorLabel.setText("Quanity value must be an integer");
+                }
                 throw new Exception();
             }
-            curQty = Integer.valueOf(quantity.getText());
-            
-            
             FlexBox newFB = BoxOrdering.createFlexBoxOrder(dim, grade, colours, rBot, rCorn, sTop, curQty);
             if(newFB != null){
                 boxList.add(newFB);
             }else{
+                changeToSuitGrade.setText("");
                 errorLabel.setText("We cannot make this box");
+                switch(grade){//handles the error message presented to assist the user to create a valid flexbox
+                    case 1: changeToSuitGrade.setText("Boxes with grade 1 card must "
+                                                    + "have 0 colour and no reinforced "
+                                                    + "bottom or corners.");
+                            break;
+                    case 2: changeToSuitGrade.setText("Boxes with grade 2 card must "
+                                                    + "have 1 colour and no reinforced "
+                                                    + "bottom or corners.");
+                            break;
+                    case 3: changeToSuitGrade.setText("Boxes with grade 3 card must "
+                                                    + "have 2 colours and no reinforced "
+                                                    + "bottom or corners.");
+                            break;
+                    case 4: changeToSuitGrade.setText("Boxes with grade 4 card must "
+                                                    + "have 2 colours, a reinforced "
+                                                    + "bottom, but with no reinforced corners.");
+                            break;
+                    case 5: changeToSuitGrade.setText("Boxes with grade 5 card must "
+                                                    + "have 2 colours, a reinforeced "
+                                                    + "bottom and reinforced corners.");
+                            break;
+                }
                 throw new Exception();
             }
-            
-            
+            // operations past here are only completed if a box has been successfully created
             errorLabel.setText("");
+            changeToSuitGrade.setText("");
             updateGlobalOrderString();
             updateTotalOrderPrice();
         }catch (Exception e){}
     }//GEN-LAST:event_addBoxBtnActionPerformed
-
+    /**
+     * Button to exit the program
+     * @param evt 
+     */
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitBtnActionPerformed
-
     /**
+     * Main method to run the GUI which drives the program
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -633,13 +673,18 @@ public class FlexBoxUI extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBoxBtn;
     private javax.swing.JLabel addFeaLabel;
+    private javax.swing.JPanel addFeatPanel;
+    private javax.swing.JPanel boxButtonPanel;
+    private javax.swing.JLabel changeToSuitGrade;
     private javax.swing.JButton clearOptionsButton;
     private javax.swing.JComboBox<String> coloursDrop;
+    private javax.swing.JPanel coloursPanel;
+    private javax.swing.JPanel dimPanel;
     private javax.swing.JLabel errorLabel;
+    private javax.swing.JPanel errorPanel;
     private javax.swing.JButton exitBtn;
     private javax.swing.JRadioButton grade1;
     private javax.swing.JRadioButton grade2;
@@ -648,31 +693,26 @@ public class FlexBoxUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton grade5;
     private javax.swing.ButtonGroup gradeButtonGroup;
     private javax.swing.JLabel gradeLabel;
+    private javax.swing.JPanel gradePanel;
     private javax.swing.JLabel heiLabel;
     private javax.swing.JTextField height;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lenLabel;
     private javax.swing.JTextField length;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel numColLabel;
+    private javax.swing.JPanel outputPanel;
     private javax.swing.JTextArea outputTextArea;
     private javax.swing.JLabel qtyLabel;
+    private javax.swing.JPanel qtyPanel;
     private javax.swing.JTextField quantity;
     private javax.swing.JCheckBox rBotCheck;
     private javax.swing.JCheckBox rCornCheck;
     private javax.swing.JCheckBox sTopCheck;
     private javax.swing.JLabel totalLabel;
+    private javax.swing.JPanel totalPricePanel;
     private javax.swing.JButton undoLastButton;
     private javax.swing.JLabel widLabel;
     private javax.swing.JTextField width;

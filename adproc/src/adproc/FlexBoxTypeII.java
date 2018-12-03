@@ -1,27 +1,43 @@
 package adproc;
-
 /**
  * FlexBoxTypeII subclass
- * @author up850844
  */
 public class FlexBoxTypeII extends FlexBox {
     /**
      * Constructor for the FlexBoxTypeII subclass
      * @param dimension Array for the x,y,z dimensions of the box
      * @param cardGrade Value of the card grade (1-5)
-     * @param colourPrint Value of the number of colours used in printing (0-2)
-     * @param reinforcedBottom Declares whether box has a reinforced bottom
-     * @param reinforcedCorners Declares whether box has reinforced corners
      * @param sealableTop Declares whether box has a sealable top
      * @param quantity Quantity of boxes of this instance
      */
-    public FlexBoxTypeII(double[] dimension, int cardGrade, int colourPrint, 
-                        boolean reinforcedBottom, boolean reinforcedCorners, 
+    public FlexBoxTypeII(double[] dimension, int cardGrade, 
                         boolean sealableTop, int quantity){
-        super(dimension, cardGrade, colourPrint, reinforcedBottom,
-              reinforcedCorners, sealableTop, quantity);
+        super(dimension, cardGrade, sealableTop, quantity);
     }
-    
+    /**
+     * Method to return value of colour for TypeII FlexBox
+     * @return Will be 1 for all TypeII FlexBoxes
+     */
+    @Override
+    public int getColour(){
+        return 1;
+    }
+    /**
+     * Method to return value of reinforced bottom for TypeII FlexBox
+     * @return Will be false for all TypeII FlexBoxes
+     */
+    @Override
+    public boolean getReinforcedBottom(){
+        return false;
+    }
+    /**
+     * Method to return value of reinforced corners for TypeII FlexBox
+     * @return Will be false for all TypeII FlexBoxes
+     */
+    @Override
+    public boolean getReinforcedCorners(){
+        return false;
+    }
     /**
      * Method to calculate the order price for the box(es) of this instance 
      * @return order price for the box(es) of this instance

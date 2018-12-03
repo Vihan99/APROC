@@ -4,99 +4,78 @@ import java.util.Arrays;
 
 /**
  * FlexBox superclass
- * @author up879045
- * @author  up850844
- * 
+ *  
  */
 public abstract class FlexBox {
     protected double[] dim;
     protected int cGrade;
-    protected int colPrint;
-    protected boolean rBot;
-    protected boolean rCorn;
     protected boolean sTop;
     protected int qty;
     protected static double[] gradePriceMultiplier = {0.55, 0.65, 0.82, 0.98, 
                                                       1.5};
+    //values for colours, reinforced bottom and reinforced corners are accessed by calling methods implemented in each subclass
     
     /**
      * Default constructor for FlexBox
      */
     public FlexBox(){}
-    
     /**
      * Constructor for FlexBox using all variables
      * @param dimension Array for the x,y,z dimensions of the box
      * @param cardGrade Value of the card grade (1-5)
-     * @param colourPrint Value of the number of colours used in printing (0-2)
-     * @param reinforcedBottom Declares whether box has a reinforced bottom
-     * @param reinforcedCorners Declares whether box has reinforced corners
      * @param sealableTop Declares whether box has a sealable top
      * @param quantity Quantity of boxes of this instance
      */
-    public FlexBox(double[] dimension, int cardGrade, int colourPrint, 
-                   boolean reinforcedBottom, boolean reinforcedCorners, 
+    public FlexBox(double[] dimension, int cardGrade, 
                    boolean sealableTop, int quantity){
         dim = dimension;
         cGrade = cardGrade;
-        colPrint = colourPrint;
-        rBot = reinforcedBottom;
-        rCorn = reinforcedCorners;
         sTop = sealableTop;
         qty = quantity;
     }
-    
-    // accessor methods
     /**
-     * Method to return array of box dimensions
+     * Dimension array accessor method
      * @return box dimension array
      */
     public double[] getDimension(){
         return dim;
     }
     /**
-     * 
+     * Card grade accessor method
      * @return box card grade
      */
     public int getCardGrade(){
         return cGrade;
     }
     /**
-     * 
+     * Accessor method to get number of colours printed on box
      * @return number of colours printed on box
      */
-    public int getColour(){
-        return colPrint;
-    }
+    abstract int getColour();
     /**
-     * 
+     * Accessor method to get reinforced bottom value
      * @return true if box has reinforced bottom
      */
-    public boolean getReinforcedBottom(){
-        return rBot;
-    }
+    abstract boolean getReinforcedBottom();
     /**
-     * 
+     * Accessor method to get reinforced corners value
      * @return true if box has reinforced corners
      */
-    public boolean getReinforcedCorners(){
-        return rCorn;
-    }
+    abstract boolean getReinforcedCorners();
     /**
-     * 
+     * Accessor method to get sealable top value
      * @return true if box has sealable top
      */
     public boolean getSealableTop(){
         return sTop;
     }
     /**
-     * 
+     * Accessor method to get box order quantity value
      * @return quantity of boxes ordered of the specific instance
      */
     public int getQuantity(){
         return qty;
     }
-    // mutator methods
     /**
      * Mutator method to set dimension array
      * @param newDim the array for dimension
@@ -112,27 +91,6 @@ public abstract class FlexBox {
         cGrade = newGrade;
     }
     /**
-     * Mutator method to set number of colours used
-     * @param newColour number of colours used
-     */
-    public void setColour(int newColour){
-        colPrint = newColour;
-    }
-    /**
-     * Mutator method to set whether box has a reinforced bottom
-     * @param newRBot false if box doesn't have reinforced bottom
-     */
-    public void setReinforcedBottom(boolean newRBot){
-        rBot = newRBot;
-    }
-    /**
-     * Mutator method to set whether box has reinforced corners
-     * @param newRCorn false if box doesn't have reinforced corners
-     */
-    public void setReinforcedCorners(boolean newRCorn){
-        rCorn = newRCorn;
-    }
-    /**
      * Mutator method to set whether box has a sealable top
      * @param newSTop false if box doesn't have a sealable top
      */
@@ -140,14 +98,12 @@ public abstract class FlexBox {
         sTop = newSTop;
     }
     /**
-     * 
+     * Mutator method to set box order quantity value
      * @param newQuantity new value for the quantity of boxes of this instance
      */
     public void setQuantity(int newQuantity){
         qty = newQuantity;
     }
-    // end of accessor/mutator methods
-    
     /**
      * Method to calculate the surface area of the box
      * @return surface area value of box
@@ -164,21 +120,19 @@ public abstract class FlexBox {
      * @return base price value of the box
      */
     abstract double calcPrice();
-    
     /**
-     * 
+     * Method to create and return a string describing the features of an ordered box
      * @return statement about an flexbox order
      */
     public String orderStatement(){
         String orderSta = "Box Dimension: " + Arrays.toString(dim);
         orderSta += "\nCard Grade: " + cGrade;
-        orderSta += "\nColours Printed: " + colPrint;
-        orderSta += "\nReinforced Bottoms?: " + rBot;
-        orderSta += "\nReinforced Corners?: " + rCorn;
+        orderSta += "\nColours Printed: " + getColour();
+        orderSta += "\nReinforced Bottoms?: " + getReinforcedBottom();
+        orderSta += "\nReinforced Corners?: " + getReinforcedCorners();
         orderSta += "\nSealable Top?: " + sTop;
         orderSta += "\nQuantity of this box style ordered: " + qty;
         orderSta += "\nORDER SUB-TOTAL: £" + String.format("%.2f", calcPrice())  + "\n\n";
-        
         return orderSta;
     }
 }
