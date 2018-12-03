@@ -522,9 +522,16 @@ public class FlexBoxUI extends javax.swing.JFrame {
     }//GEN-LAST:event_clearOptionsButtonActionPerformed
 
     private void undoLastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoLastButtonActionPerformed
-        boxList.remove(boxList.size() - 1);
-        updateGlobalOrderString();
-        updateTotalOrderPrice();
+        try{
+            boxList.remove(boxList.size() - 1);
+            updateGlobalOrderString();
+            updateTotalOrderPrice();
+        }catch(Exception e){
+            if(e instanceof java.lang.ArrayIndexOutOfBoundsException){
+                errorLabel.setText("All boxes have been removed");
+            }
+        }
+        
     }//GEN-LAST:event_undoLastButtonActionPerformed
    
     @SuppressWarnings("empty-statement")
@@ -535,7 +542,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
                 curLen = Double.valueOf(length.getText());
                 curWid = Double.valueOf(width.getText());
                 curHei = Double.valueOf(height.getText());
-            }catch(Exception e){
+            }catch(NumberFormatException e){
                 errorLabel.setText("Dimension values must be numerals");
                 throw new Exception();
             }
@@ -566,7 +573,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
             
             try{
                 curQty = Integer.valueOf(quantity.getText());
-            }catch(Exception e){
+            }catch(NumberFormatException e){
                 errorLabel.setText("Quanity value must be an integer");
                 throw new Exception();
             }
