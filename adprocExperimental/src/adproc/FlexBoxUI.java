@@ -538,12 +538,23 @@ public class FlexBoxUI extends javax.swing.JFrame {
     private void addBoxBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBoxBtnActionPerformed
         try{
             
+            
             try{
                 curLen = Double.valueOf(length.getText());
                 curWid = Double.valueOf(width.getText());
                 curHei = Double.valueOf(height.getText());
-            }catch(NumberFormatException e){
-                errorLabel.setText("Dimension values must be numerals");
+                if(
+                  (curLen > 10 || curLen < 0.1) ||
+                  (curWid > 10 || curWid < 0.1) ||
+                  (curHei > 10 || curHei < 0.1)
+                  ){
+                    errorLabel.setText("Dimension must be between 0.1 - 10 metres");
+                    throw new Exception();
+                }
+            }catch(Exception e){
+                if(e instanceof NumberFormatException){
+                    errorLabel.setText("Dimension values must be numerals");
+                }
                 throw new Exception();
             }
             
@@ -573,8 +584,14 @@ public class FlexBoxUI extends javax.swing.JFrame {
             
             try{
                 curQty = Integer.valueOf(quantity.getText());
-            }catch(NumberFormatException e){
-                errorLabel.setText("Quanity value must be an integer");
+                if(curQty < 1 || curQty > 100){
+                    errorLabel.setText("0 - 100 boxes per order only");
+                    throw new Exception();
+                }
+            }catch(Exception e){
+                if(e instanceof NumberFormatException){
+                    errorLabel.setText("Quanity value must be an integer");
+                }
                 throw new Exception();
             }
             curQty = Integer.valueOf(quantity.getText());
