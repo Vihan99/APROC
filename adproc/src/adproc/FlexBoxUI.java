@@ -511,6 +511,8 @@ public class FlexBoxUI extends javax.swing.JFrame {
      * @param evt 
      */
     private void clearOptionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOptionsButtonActionPerformed
+        errorLabel.setText("");
+        changeToSuitGrade.setText("");
         length.setText("");
         width.setText("");
         height.setText("");
@@ -542,6 +544,8 @@ public class FlexBoxUI extends javax.swing.JFrame {
      */
     @SuppressWarnings("empty-statement")
     private void addBoxBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBoxBtnActionPerformed
+        errorLabel.setText("");
+        changeToSuitGrade.setText("");       
         try{//handles valid creation of a flexbox
             try{//handles validation of dimension values
                 curLen = Double.valueOf(length.getText());
