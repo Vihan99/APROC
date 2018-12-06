@@ -17,6 +17,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
         initComponents();
         setTitle("FlexBox Ordering System");
         outputTextArea.setEditable(false);
+        
     }
     /**
      *Method to update the total order price
