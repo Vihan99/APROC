@@ -1,4 +1,5 @@
 package adproc;
+import java.awt.*;
 import java.util.ArrayList;
 /**
  * FlexBoxUI class to manage the design and fuctionality of the GUI
@@ -16,6 +17,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
     public FlexBoxUI() {
         initComponents();
         setTitle("FlexBox Ordering System");
+        setLayout(new FlowLayout());
         outputTextArea.setEditable(false);
         
     }
@@ -347,7 +349,7 @@ public class FlexBoxUI extends javax.swing.JFrame {
 
         totalPricePanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        totalLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        totalLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         totalLabel.setText("Total Order Price: £0.00");
 
         javax.swing.GroupLayout totalPricePanelLayout = new javax.swing.GroupLayout(totalPricePanel);
@@ -355,8 +357,9 @@ public class FlexBoxUI extends javax.swing.JFrame {
         totalPricePanelLayout.setHorizontalGroup(
             totalPricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(totalPricePanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(totalLabel)
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         totalPricePanelLayout.setVerticalGroup(
             totalPricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,9 +451,9 @@ public class FlexBoxUI extends javax.swing.JFrame {
                                         .addComponent(coloursPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(addFeatPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addComponent(totalPricePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(44, 44, 44)
+                                .addGap(33, 33, 33)
                                 .addComponent(outputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         mainPanelLayout.setVerticalGroup(
@@ -491,9 +494,9 @@ public class FlexBoxUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(24, 24, 24)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
